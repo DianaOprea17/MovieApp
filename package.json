@@ -14,7 +14,9 @@
     "cor": "^0.0.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "morgan": "^1.10.0"
+    "firebase": "^11.1.0",
+    "morgan": "^1.10.0",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
