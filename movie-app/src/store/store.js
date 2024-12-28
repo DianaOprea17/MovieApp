@@ -36,4 +36,7 @@ export default createStore({
       commit('deleteMovie', movieId);
     },
   },
+  modules: {
+    
+  }
 });
