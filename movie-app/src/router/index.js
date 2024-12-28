@@ -7,7 +7,7 @@ import Signup from '../components/UserSignup.vue';
 const routes = [
   { path: '/login', component: LogIn },
   { path: '/signup', component: Signup },
-  { path: '/', name: 'HomePage', component: HomePage },
+  { path: '/home', name: 'HomePage', component: HomePage },
   { path: '/movies', name: 'MovieList', component: MovieList },
 ];
 

@@ -1,7 +1,7 @@
 <template>
     <div class="login-container">
       <h2>Log in</h2>
-      <form @submit.prevent="login">
+      <form v-on:submit.prevent="login">
         <div class="input-group">
           <label for="email">Email:</label>
           <input
@@ -49,7 +49,7 @@
         const auth = getAuth();
         try {
           await signInWithEmailAndPassword(auth, this.email, this.password);
-          this.$router.push('/dashboard'); 
+          this.$router.push('/home'); 
         } catch (error) {
           this.errorMessage = 'No account found. Please try again.';
         }

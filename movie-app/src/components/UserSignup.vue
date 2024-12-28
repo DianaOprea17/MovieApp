@@ -1,7 +1,7 @@
 <template>
     <div class="signup-container">
       <h2>Sign Up</h2>
-      <form @submit.prevent="signUp">
+      <form v-on:submit.prevent="signUp">
         <div class="input-group">
           <label for="email">Email:</label>
           <input
@@ -43,7 +43,8 @@
   
   <script>
 
-  import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+  import { createUserWithEmailAndPassword} from 'firebase/auth';
+  import {auth} from '@/firebase';
   
   
   export default {
@@ -61,11 +62,12 @@
           this.errorMessage = 'Passwords do not match!';
           return;
         }
-        const auth = getAuth();
+        
         try {
           await createUserWithEmailAndPassword(auth, this.email, this.password);
-          this.$router.push('/dashboard'); 
+          this.$router.push('/home'); 
         } catch (error) {
+          console.error('Firebase Error:', error);
           this.errorMessage = 'Error creating account. Please try again.';
         }
       },
